@@ -23,9 +23,9 @@ const data = [
 export const Home = () => {
   const [todos, setTodos] = useState(data);
 
-  const changeTodo = (id) => {
+  const changeTodo = id => {
     const copy = [...todos];
-    const current = copy.find((t) => t._id === id);
+    const current = copy.find(t => t._id === id);
     current.isCompleted = !current.isCompleted;
     setTodos(copy);
   };
@@ -34,7 +34,7 @@ export const Home = () => {
 
 
   return (
-    <div className=" text-white w-4/5 mx-auto">
+    <div className=" text-white w-4/5 md:w-4/5 lg:w-3/5 mx-auto">
       <h1 className="text-2xl font-bold text-center mb-10">TODO</h1>
       {todos.map( todo => (
         <TodoItem
